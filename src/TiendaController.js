@@ -6,25 +6,36 @@ class TiendaController{
             {
                 platillos:[
                     {
-                        name : "nombrePlatillo",
+                        name : "Platillo 1",
                         description : "platillo muy rico",
                         price : 500,
                         count: 0
                     },
                     {
-                        name : "nombrePlatillo",
+                        name : "Platillo 2",
                         description : "platillo muy rico",
-                        price : 500,
+                        price : 1300,
                         count: 0
                     },
                     {
-                        name : "nombrePlatillo",
+                        name : "Platillo 3",
                         description : "platillo muy rico",
-                        price : 500,
+                        price : 200,
                         count: 0
                     }
                 ]
             })
+    }
+
+    /**
+     * Update count in platillos
+     * @param index {number}
+     * @param count {number}
+     */
+    updateCount( index, count ){
+        if( this.platillos[index] ){
+            this.platillos[index].count = count;
+        }
     }
 }
 
