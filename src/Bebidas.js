@@ -5,21 +5,21 @@ import './Platillos.css';
 import logo from './logo.svg';
 
 
-class Platillos extends Component{
+class Bebidas extends Component{
     render(){
-        let _platillos = [];
-        const _pushArrayPlatillos = varTiendaController.platillos.forEach(
+        let _bebidas = [];
+        const _pushArrayBebidas = varTiendaController.bebidas.forEach(
             ( value, index ) => (
-                _platillos.push(
+                _bebidas.push(
                     <div className="list-group-item" key={ index } >
                         <div className="panel-body">
                             <img role="presentation" src={ logo } alt="" className="ImagenPlatillo"/>
                             <h2 className="TitlePlatillo">{ value.name }</h2>
                             <div className="DescripcionPlatillo">{ value.description }</div>
                             <Orden precio={ value.price } indice={ index }
-                                   hacerPedido={ ( index_platillo, count_platillo ) =>{
-                                varTiendaController.updateCountPlatillos( index_platillo, count_platillo )
-                            } }></Orden>
+                                   hacerPedido={ ( index_bebida, count_bebida ) =>{
+                                       varTiendaController.updateCountBebidas( index_bebida, count_bebida )
+                                   } }></Orden>
                         </div>
                     </div>  )
             )
@@ -30,7 +30,7 @@ class Platillos extends Component{
                     <div className="panel panel-primary">
                         <div className="list-group Platillo-Menu">
                             <div className="list-group-item">
-                                { _platillos }
+                                { _bebidas }
                             </div>
                         </div>
                     </div>
@@ -40,4 +40,4 @@ class Platillos extends Component{
     }
 }
 
-export default Platillos;
+export default Bebidas;

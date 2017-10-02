@@ -23,6 +23,26 @@ class TiendaController{
                         price : 200,
                         count: 0
                     }
+                ],
+                bebidas:[
+                    {
+                        name : "Bebida 1",
+                        description : "Bebida muy rica",
+                        price : 10,
+                        count: 0
+                    },
+                    {
+                        name : "Bebida 2",
+                        description : "Bebida muy rica",
+                        price : 70,
+                        count: 0
+                    },
+                    {
+                        name : "Bebida 3",
+                        description : "Bebida muy rica",
+                        price : 30,
+                        count: 0
+                    }
                 ]
             })
     }
@@ -32,9 +52,20 @@ class TiendaController{
      * @param index {number}
      * @param count {number}
      */
-    updateCount( index, count ){
+    updateCountPlatillos( index, count ){
         if( this.platillos[index] ){
             this.platillos[index].count = count;
+        }
+    }
+
+    /**
+     * Update count in bebidas
+     * @param index {number}
+     * @param count {number}
+     */
+    updateCountBebidas( index, count ){
+        if( this.bebidas[index] ){
+            this.bebidas[index].count = count;
         }
     }
 }

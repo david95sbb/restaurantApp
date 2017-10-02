@@ -8,6 +8,11 @@
     width: 80px;
     float: left;
 }
+.Pedidos-Menu{
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 .TitlePlatillo{
     margin-top: 0px;
 }

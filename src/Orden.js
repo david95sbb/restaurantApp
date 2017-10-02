@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Orden extends Component{
+    updateCount( event ){
+        this.props.hacerPedido( this.props.indice, event.target.value );
+    }
     render(){
         return(
             <div>
