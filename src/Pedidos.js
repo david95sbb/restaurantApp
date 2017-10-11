@@ -9,15 +9,15 @@ class Pedidos extends Component{
 
         const _pushArrayPedidios = varTiendaController.platillos.forEach(
             ( value, index ) => {
-                if( value.count > 0 ) {
+                if( value.cantidad > 0 ) {
                     _pedidosArray.push(
                         <div className="list-group-item" key={index}>
                             <div className="panel-body">
                                 <h4>{value.name}</h4>
                                 <br/>
                                 <div className="APrecioCantidad">
-                                    <span>Cantidad: {value.count} </span>
-                                    <span className="PrecioPlatillo"> Precio: {value.count * value.price} </span>
+                                    <span>Cantidad: {value.cantidad} </span>
+                                    <span className="PrecioPlatillo"> Precio: {value.cantidad * value.price} </span>
                                 </div>
                             </div>
                         </div>
@@ -28,15 +28,15 @@ class Pedidos extends Component{
 
         const _pushArrayBebidas = varTiendaController.bebidas.forEach(
             ( value, index ) => {
-                if( value.count > 0 ) {
+                if( value.cantidad > 0 ) {
                     _bebidasArray.push(
                         <div className="list-group-item" key={index}>
                             <div className="panel-body">
                                 <h4>{value.name}</h4>
                                 <br/>
                                 <div className="APrecioCantidad">
-                                    <span>Cantidad: {value.count} </span>
-                                    <span className="PrecioPlatillo"> Precio: {value.count * value.price} </span>
+                                    <span>Cantidad: {value.cantidad} </span>
+                                    <span className="PrecioPlatillo"> Precio: {value.cantidad * value.price} </span>
                                 </div>
                             </div>
                         </div>

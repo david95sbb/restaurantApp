@@ -13,7 +13,7 @@ class Platillos extends Component{
                 _platillos.push(
                     <div className="list-group-item" key={ index } >
                         <div className="panel-body">
-                            <img role="presentation" src={ logo } alt="" className="ImagenPlatillo"/>
+                            <img role="presentation" src={ value.img } alt="" className="ImagenPlatillo"/>
                             <h2 className="TitlePlatillo">{ value.name }</h2>
                             <div className="DescripcionPlatillo">{ value.description }</div>
                             <Orden precio={ value.price } indice={ index }

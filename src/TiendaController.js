@@ -1,49 +1,29 @@
 import { extendObservable } from 'mobx';
+import _dataFirebase from './firebase.controller';
 
 class TiendaController{
     constructor(){
+        self = this;
+        _dataFirebase._bebidas.once( "value" )
+            .then( function ( snapshot ) {
+                snapshot.forEach( function ( childSnapshot ) {
+                    const key = childSnapshot.key;
+                    const val = childSnapshot.val();
+                    self.bebidas.push( val );
+                } )
+            } );
+        _dataFirebase._platillos.once( "value" )
+            .then( function ( snapshot ) {
+                snapshot.forEach( function ( childSnapshot ) {
+                    const key = childSnapshot.key;
+                    const val = childSnapshot.val();
+                    self.platillos.push( val );
+                } )
+            } );
         extendObservable( this,
             {
-                platillos:[
-                    {
-                        name : "Platillo 1",
-                        description : "platillo muy rico",
-                        price : 500,
-                        count: 0
-                    },
-                    {
-                        name : "Platillo 2",
-                        description : "platillo muy rico",
-                        price : 1300,
-                        count: 0
-                    },
-                    {
-                        name : "Platillo 3",
-                        description : "platillo muy rico",
-                        price : 200,
-                        count: 0
-                    }
-                ],
-                bebidas:[
-                    {
-                        name : "Bebida 1",
-                        description : "Bebida muy rica",
-                        price : 10,
-                        count: 0
-                    },
-                    {
-                        name : "Bebida 2",
-                        description : "Bebida muy rica",
-                        price : 70,
-                        count: 0
-                    },
-                    {
-                        name : "Bebida 3",
-                        description : "Bebida muy rica",
-                        price : 30,
-                        count: 0
-                    }
-                ]
+                platillos:[],
+                bebidas:[]
             })
     }
 
@@ -54,7 +34,7 @@ class TiendaController{
      */
     updateCountPlatillos( index, count ){
         if( this.platillos[index] ){
-            this.platillos[index].count = count;
+            this.platillos[index].cantidad = count;
         }
     }
 
@@ -65,7 +45,7 @@ class TiendaController{
      */
     updateCountBebidas( index, count ){
         if( this.bebidas[index] ){
-            this.bebidas[index].count = count;
+            this.bebidas[index].cantidad = count;
         }
     }
 }
